@@ -1,0 +1,7 @@
+{
+  "extends": ["next/core-web-vitals", "prettier"],
+  "rules": {
+    "import/order": ["error", { "alphabetize": { "order": "asc" } }]
+  },
+  "ignorePatterns": [".next/", "node_modules/"]
+}

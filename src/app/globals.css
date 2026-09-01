@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Brand palettes. Every color used by components goes through these variables
+  (see tailwind.config.ts), so switching `data-brand` on <html> restyles the
+  whole app with zero component changes.
+
+  Enterprise: dark, dense, professional.
+  SMB: light, warm, rounded, larger type for less tech-savvy users.
+*/
+
+:root,
+html[data-brand='enterprise'] {
+  --color-brand: 79 70 229; /* indigo-600 */
+  --color-brand-soft: 224 231 255; /* indigo-100 */
+  --color-brand-fg: 255 255 255;
+
+  --color-surface: 15 18 30; /* page background */
+  --color-surface-raised: 25 29 45; /* bubbles, header */
+  --color-surface-sunken: 10 12 22; /* composer well */
+
+  --color-ink: 231 233 240;
+  --color-ink-muted: 148 155 175;
+  --color-ink-faint: 100 108 130;
+
+  --color-line: 45 50 70;
+
+  --radius-bubble: 0.625rem;
+  --radius-control: 0.5rem;
+  --font-size-chat: 0.9375rem;
+}
+
+html[data-brand='smb'] {
+  --color-brand: 234 88 12; /* orange-600 */
+  --color-brand-soft: 255 237 213; /* orange-100 */
+  --color-brand-fg: 255 255 255;
+
+  --color-surface: 255 251 245;
+  --color-surface-raised: 255 255 255;
+  --color-surface-sunken: 253 244 232;
+
+  --color-ink: 51 45 39;
+  --color-ink-muted: 120 110 100;
+  --color-ink-faint: 168 158 148;
+
+  --color-line: 240 225 210;
+
+  --radius-bubble: 1.25rem;
+  --radius-control: 9999px;
+  --font-size-chat: 1.0625rem;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-surface text-ink antialiased;
+}
+
+/* Slim, brand-tinted scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--color-ink-faint) / 0.5);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Code blocks inside markdown */
+.chat-prose pre {
+  @apply overflow-x-auto rounded-lg border border-line bg-surface-sunken p-4 text-sm;
+}
+.chat-prose code {
+  @apply rounded bg-surface-sunken px-1.5 py-0.5 text-[0.85em] font-medium;
+}
+.chat-prose pre code {
+  @apply bg-transparent p-0;
+}
+.chat-prose table {
+  @apply block max-w-full overflow-x-auto whitespace-nowrap;
+}
