@@ -2,6 +2,10 @@
 
 A full-page ChatGPT-style chat app built with **Next.js 15 (App Router), React 19, TypeScript and Tailwind CSS**.
 
+**🔗 Live demo: [dextr-chatbot.vercel.app](https://dextr-chatbot.vercel.app/)**
+
+> Try it: click a suggestion, ask "what can you do?" for multiple-choice buttons, "explain my report" for a markdown table, "show me some react code" for a highlighted code block — and flip the **Enterprise / Simple** toggle in the header to switch brand styles on the same conversation.
+
 ## Getting started
 
 ```bash
