@@ -39,7 +39,7 @@ The toggle in the header switches between two complete looks:
 - **Prettier + ESLint** (`next/core-web-vitals`) keep formatting and code quality consistent.
 - **husky + lint-staged** enforce quality gates automatically:
   - `pre-commit` → runs `eslint --fix` + `prettier --write` on the staged files only (fast).
-  - `pre-push` → runs the full `tsc --noEmit` typecheck and a project-wide lint, so nothing broken reaches the remote.
+  - `pre-push` → runs the full `tsc --noEmit` typecheck, a project-wide lint, and a production `next build`, so nothing that fails to compile can reach the remote.
 - Useful scripts: `npm run lint`, `npm run typecheck`, `npm run format`.
 
 ## How the code is organized
